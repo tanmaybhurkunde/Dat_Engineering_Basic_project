@@ -25,3 +25,5 @@ print(f_5)
 #  providing the mean , std etc
 desc = df.describe() 
 print(desc)
+
+print(df.isnull().sum())
