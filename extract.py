@@ -15,7 +15,7 @@ print(inf)
 
 
 #   providing the first 5 values 
-
+ 
 # f_5_ = pd.head(df) --> why this is wrong ? but te below is right 
 
 f_5 = df.head()
