@@ -1,0 +1,4 @@
+2026-05-26 13:01:19,799 - INFO - Loading file : weatherAUS.csv
+2026-05-26 13:01:20,358 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-26 13:01:20,437 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-26 13:01:20,437 - INFO - Extract complete.
