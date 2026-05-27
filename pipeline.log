@@ -2,3 +2,145 @@
 2026-05-26 13:01:20,358 - INFO - Successfully loaded 145460 rows and 23 columns
 2026-05-26 13:01:20,437 - WARNING - High missing data: 10.3% of dataset is null
 2026-05-26 13:01:20,437 - INFO - Extract complete.
+2026-05-27 12:49:22,181 - INFO - Loading file : weatherAUS.csv
+2026-05-27 12:49:22,925 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 12:49:23,038 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 12:49:23,041 - INFO - Extract complete.
+2026-05-27 12:50:10,363 - INFO - Loading file : weatherAUS.csv
+2026-05-27 12:50:10,917 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 12:50:11,021 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 12:50:11,025 - INFO - Extract complete.
+2026-05-27 12:51:15,795 - INFO - Loading file : weatherAUS.csv
+2026-05-27 12:51:16,357 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 12:51:16,438 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 12:51:16,448 - INFO - Extract complete.
+2026-05-27 12:58:05,153 - INFO - Loading file : weatherAUS.csv
+2026-05-27 12:58:05,779 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 12:58:05,852 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 12:58:05,859 - INFO - Extract complete.
+2026-05-27 12:58:05,859 - INFO - starting the transformation....
+2026-05-27 12:58:05,910 - INFO - Dropped 3 columns with > 40%  missing value
+2026-05-27 12:58:06,076 - INFO - transformation complete.
+2026-05-27 12:58:22,588 - INFO - Loading file : weatherAUS.csv
+2026-05-27 12:58:23,115 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 12:58:23,205 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 12:58:23,206 - INFO - Extract complete.
+2026-05-27 12:58:23,206 - INFO - starting the transformation....
+2026-05-27 12:58:23,282 - INFO - Dropped 3 columns with > 40%  missing value
+2026-05-27 12:58:23,819 - INFO - transformation complete.
+2026-05-27 12:59:36,422 - INFO - Loading file : weatherAUS.csv
+2026-05-27 12:59:36,906 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 12:59:36,983 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 12:59:36,983 - INFO - Extract complete.
+2026-05-27 12:59:36,983 - INFO - starting the transformation....
+2026-05-27 12:59:37,055 - INFO - Dropped 3 columns with > 40%  missing value
+2026-05-27 12:59:37,505 - INFO - transformation complete.
+2026-05-27 13:08:35,147 - INFO - Loading file : weatherAUS.csv
+2026-05-27 13:08:35,622 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 13:08:35,672 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 13:08:35,672 - INFO - Extract complete.
+2026-05-27 13:08:35,672 - INFO - starting the transformation....
+2026-05-27 13:08:35,719 - INFO - Dropped 3 columns with > 40%  missing value
+2026-05-27 13:08:35,794 - INFO - Filled numeric columns: 13 columns
+2026-05-27 13:08:47,034 - INFO - Loading file : weatherAUS.csv
+2026-05-27 13:08:47,546 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 13:08:47,619 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 13:08:47,621 - INFO - Extract complete.
+2026-05-27 13:08:47,621 - INFO - starting the transformation....
+2026-05-27 13:08:47,689 - INFO - Dropped 3 columns with > 40%  missing value
+2026-05-27 13:08:47,769 - INFO - Filled numeric columns: 13 columns
+2026-05-27 13:10:09,781 - INFO - Loading file : weatherAUS.csv
+2026-05-27 13:10:10,263 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 13:10:10,313 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 13:10:10,314 - INFO - Extract complete.
+2026-05-27 13:10:10,314 - INFO - starting the transformation....
+2026-05-27 13:10:10,362 - INFO - Dropped 3 columns with > 40%  missing value
+2026-05-27 13:10:10,417 - INFO - Filled numeric columns: 13 columns
+2026-05-27 13:10:10,473 - INFO - Filled text columns: 7 columns
+2026-05-27 13:10:10,522 - INFO - All missing values have been filled!
+2026-05-27 13:10:10,522 - INFO - transformation complete.
+2026-05-27 13:10:17,607 - INFO - Loading file : weatherAUS.csv
+2026-05-27 13:10:18,068 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 13:10:18,143 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 13:10:18,144 - INFO - Extract complete.
+2026-05-27 13:10:18,144 - INFO - starting the transformation....
+2026-05-27 13:10:18,215 - INFO - Dropped 3 columns with > 40%  missing value
+2026-05-27 13:10:18,302 - INFO - Filled numeric columns: 13 columns
+2026-05-27 13:10:18,370 - INFO - Filled text columns: 7 columns
+2026-05-27 13:10:18,440 - INFO - All missing values have been filled!
+2026-05-27 13:10:18,440 - INFO - transformation complete.
+2026-05-27 13:12:38,071 - INFO - Loading file : weatherAUS.csv
+2026-05-27 13:12:38,559 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 13:12:38,638 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 13:12:38,639 - INFO - Extract complete.
+2026-05-27 13:12:38,639 - INFO - starting the transformation....
+2026-05-27 13:12:38,711 - INFO - Dropped 3 columns: ['Evaporation', 'Sunshine', 'Cloud3pm']
+2026-05-27 13:12:38,803 - INFO - Filled numeric columns: 13 columns
+2026-05-27 13:12:38,874 - INFO - Filled text columns: 7 columns
+2026-05-27 13:12:38,947 - INFO - All missing values have been filled!
+2026-05-27 13:12:38,947 - INFO - transformation complete.
+2026-05-27 16:32:57,597 - INFO - Loading file : weatherAUS.csv
+2026-05-27 16:32:58,363 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 16:32:58,470 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 16:32:58,470 - INFO - Extract complete.
+2026-05-27 16:32:58,470 - INFO - starting the transformation....
+2026-05-27 16:32:58,563 - INFO - Dropped 3 columns: ['Evaporation', 'Sunshine', 'Cloud3pm']
+2026-05-27 16:32:58,659 - INFO - Filled numeric columns: 13 columns
+2026-05-27 16:32:58,749 - INFO - Filled text columns: 7 columns
+2026-05-27 16:32:58,827 - INFO - All missing values have been filled!
+2026-05-27 16:32:58,827 - INFO - transformation complete.
+2026-05-27 16:32:58,828 - INFO - Fixing the names and data types...
+2026-05-27 16:32:59,168 - INFO - Added derived date columns: year, month, day, day_of_week
+2026-05-27 16:32:59,247 - INFO - Schema fixed . Columns now: ['date', 'location', 'mintemp', 'maxtemp', 'rainfall', 'windgustdir', 'windgustspeed', 'winddir9am', 'winddir3pm', 'windspeed9am', 'windspeed3pm', 'humidity9am', 'humidity3pm', 'pressure9am', 'pressure3pm', 'cloud9am', 'temp9am', 'temp3pm', 'raintoday', 'raintomorrow', 'year', 'month', 'day', 'day_of_week']
+2026-05-27 16:34:37,006 - INFO - Loading file : weatherAUS.csv
+2026-05-27 16:34:37,536 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 16:34:37,592 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 16:34:37,592 - INFO - Extract complete.
+2026-05-27 16:34:37,593 - INFO - starting the transformation....
+2026-05-27 16:34:37,651 - INFO - Dropped 3 columns: ['Evaporation', 'Sunshine', 'Cloud3pm']
+2026-05-27 16:34:37,723 - INFO - Filled numeric columns: 13 columns
+2026-05-27 16:34:37,769 - INFO - Filled text columns: 7 columns
+2026-05-27 16:34:37,818 - INFO - All missing values have been filled!
+2026-05-27 16:34:37,819 - INFO - transformation complete.
+2026-05-27 16:34:37,819 - INFO - Fixing the names and data types...
+2026-05-27 16:34:37,820 - INFO - Renamed columns: 20 to 20 columns
+2026-05-27 16:34:37,965 - INFO - Added derived date columns: year, month, day, day_of_week
+2026-05-27 16:34:38,008 - INFO - Schema fixed . Columns now: ['date', 'location', 'mintemp', 'maxtemp', 'rainfall', 'windgustdir', 'windgustspeed', 'winddir9am', 'winddir3pm', 'windspeed9am', 'windspeed3pm', 'humidity9am', 'humidity3pm', 'pressure9am', 'pressure3pm', 'cloud9am', 'temp9am', 'temp3pm', 'raintoday', 'raintomorrow', 'year', 'month', 'day', 'day_of_week']
+2026-05-27 16:36:43,057 - INFO - Loading file : weatherAUS.csv
+2026-05-27 16:36:43,926 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 16:36:44,015 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 16:36:44,015 - INFO - Extract complete.
+2026-05-27 16:36:44,015 - INFO - starting the transformation....
+2026-05-27 16:36:44,115 - INFO - Dropped 3 columns: ['Evaporation', 'Sunshine', 'Cloud3pm']
+2026-05-27 16:36:44,223 - INFO - Filled numeric columns: 13 columns
+2026-05-27 16:36:44,335 - INFO - Filled text columns: 7 columns
+2026-05-27 16:36:44,437 - INFO - All missing values have been filled!
+2026-05-27 16:36:44,438 - INFO - transformation complete.
+2026-05-27 16:36:44,438 - INFO - Fixing the names and data types...
+2026-05-27 16:36:44,440 - INFO - Renamed columns: 20 to 20 columns
+2026-05-27 16:36:44,675 - INFO - Added derived date columns: year, month, day, day_of_week
+2026-05-27 16:36:44,778 - INFO - Schema fixed . Columns now: ['date', 'location', 'mintemp', 'maxtemp', 'rainfall', 'windgustdir', 'windgustspeed', 'winddir9am', 'winddir3pm', 'windspeed9am', 'windspeed3pm', 'humidity9am', 'humidity3pm', 'pressure9am', 'pressure3pm', 'cloud9am', 'temp9am', 'temp3pm', 'raintoday', 'raintomorrow', 'year', 'month', 'day', 'day_of_week']
+2026-05-27 16:46:54,981 - INFO - Loading file : weatherAUS.csv
+2026-05-27 16:46:55,486 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 16:46:55,575 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 16:46:55,579 - INFO - Extract complete.
+2026-05-27 16:46:55,579 - INFO - starting the transformation....
+2026-05-27 16:46:55,703 - INFO - Dropped 3 columns: ['Evaporation', 'Sunshine', 'Cloud3pm']
+2026-05-27 16:46:55,830 - INFO - Filled numeric columns: 13 columns
+2026-05-27 16:46:55,915 - INFO - Filled text columns: 7 columns
+2026-05-27 16:46:55,991 - INFO - All missing values have been filled!
+2026-05-27 16:46:55,991 - INFO - transformation complete.
+2026-05-27 16:48:35,266 - INFO - Loading file : weatherAUS.csv
+2026-05-27 16:48:35,868 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-05-27 16:48:35,945 - WARNING - High missing data: 10.3% of dataset is null
+2026-05-27 16:48:35,946 - INFO - Extract complete.
+2026-05-27 16:48:35,946 - INFO - starting the transformation....
+2026-05-27 16:48:36,005 - INFO - Dropped 3 columns: ['Evaporation', 'Sunshine', 'Cloud3pm']
+2026-05-27 16:48:36,076 - INFO - Filled numeric columns: 13 columns
+2026-05-27 16:48:36,131 - INFO - Filled text columns: 7 columns
+2026-05-27 16:48:36,181 - INFO - All missing values have been filled!
+2026-05-27 16:48:36,182 - INFO - transformation complete.
+2026-05-27 16:48:36,182 - INFO - Fixing the names and data types...
+2026-05-27 16:48:36,183 - INFO - Renamed columns: 20 to 20 columns
+2026-05-27 16:48:36,326 - INFO - Added derived date columns: year, month, day, day_of_week
+2026-05-27 16:48:36,370 - INFO - Schema fixed . Columns now: ['date', 'location', 'mintemp', 'maxtemp', 'rainfall', 'windgustdir', 'windgustspeed', 'winddir9am', 'winddir3pm', 'windspeed9am', 'windspeed3pm', 'humidity9am', 'humidity3pm', 'pressure9am', 'pressure3pm', 'cloud9am', 'temp9am', 'temp3pm', 'raintoday', 'raintomorrow', 'year', 'month', 'day', 'day_of_week']
