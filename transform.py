@@ -123,7 +123,10 @@ def fix_schema(df) :
                         break
                 except:
                     continue
-    # Task C — Fix numeric columns stored as strings
+                    
+    df['temp_range'] = df['max_temp'] + df['min_temp']
+    df['is_hot_day'] = df['max_temp'] > 35
+
 
     # Task C — Fix numeric columns stored as strings (improved version)
     numeric_converted = []
