@@ -123,9 +123,33 @@ def fix_schema(df) :
                         break
                 except:
                     continue
-                    
-    df['temp_range'] = df['max_temp'] + df['min_temp']
-    df['is_hot_day'] = df['max_temp'] > 35
+      # check if columns exist before  creating new features
+    possible_max_cols = ['max_temp' , 'maxTemp', 'max Temp' , 'temp_max' ]
+    possible_min_cols = ['min_temp', 'mintemp', 'min temp', 'temp_min']
+
+    max_col = None
+    min_col = None
+
+    for col in possible_max_cols:
+        if col in df.columns:
+            max_col = col
+            break
+    
+    for col in possible_min_cols:
+        if col in df.columns:
+            min_col = col
+            break
+
+    # create only if both temperature columns exist
+    if max_col and min_col:
+        df['temp_range'] = df['max_temp'] - df['min_temp']
+        logger.info(f"Created 'temp_range' feature using {max_col} and {min_col}")
+
+        df['is_hot_day'] = df['max_temp'] > 35
+        logger.info(f"Created 'is_hot_day' feature (True when {max_col} > 35)")
+    else:
+        logger.warning(f"Could not find temperature columns. Found max: {max_col}, min: {min_col}")
+
 
 
     # Task C — Fix numeric columns stored as strings (improved version)
@@ -166,4 +190,5 @@ if __name__ == "__main__":
     df_clean = clean(df_raw)
     df_final = fix_schema(df_clean)
     print(df_final.dtypes)
+    
     # print(df_clean.isnull().sum().sum())  # should show all zeros
