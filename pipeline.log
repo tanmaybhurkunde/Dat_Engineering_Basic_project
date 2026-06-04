@@ -144,3 +144,36 @@
 2026-05-27 16:48:36,183 - INFO - Renamed columns: 20 to 20 columns
 2026-05-27 16:48:36,326 - INFO - Added derived date columns: year, month, day, day_of_week
 2026-05-27 16:48:36,370 - INFO - Schema fixed . Columns now: ['date', 'location', 'mintemp', 'maxtemp', 'rainfall', 'windgustdir', 'windgustspeed', 'winddir9am', 'winddir3pm', 'windspeed9am', 'windspeed3pm', 'humidity9am', 'humidity3pm', 'pressure9am', 'pressure3pm', 'cloud9am', 'temp9am', 'temp3pm', 'raintoday', 'raintomorrow', 'year', 'month', 'day', 'day_of_week']
+2026-06-04 19:45:11,702 - INFO - Loading file : weatherAUS.csv
+2026-06-04 19:45:12,549 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-06-04 19:45:12,700 - WARNING - High missing data: 10.3% of dataset is null
+2026-06-04 19:45:12,702 - INFO - Extract complete.
+2026-06-04 19:45:12,702 - INFO - starting the transformation....
+2026-06-04 19:45:12,884 - INFO - Dropped 3 columns: ['Evaporation', 'Sunshine', 'Cloud3pm']
+2026-06-04 19:45:13,032 - INFO - Filled numeric columns: 13 columns
+2026-06-04 19:45:13,146 - INFO - Filled text columns: 7 columns
+2026-06-04 19:45:13,251 - INFO - All missing values have been filled!
+2026-06-04 19:45:13,251 - INFO - transformation complete.
+2026-06-04 19:45:13,252 - INFO - Fixing the names and data types...
+2026-06-04 19:45:13,253 - INFO - Renamed columns: 20 to 20 columns
+2026-06-04 19:45:13,467 - INFO - Added derived date columns: year, month, day, day_of_week
+2026-06-04 19:45:13,467 - WARNING - Could not find temperature columns. Found max: None, min: mintemp
+2026-06-04 19:45:13,477 - INFO - Created 'season' column from month
+2026-06-04 19:45:13,581 - INFO - Schema fixed . Columns now: ['date', 'location', 'mintemp', 'maxtemp', 'rainfall', 'windgustdir', 'windgustspeed', 'winddir9am', 'winddir3pm', 'windspeed9am', 'windspeed3pm', 'humidity9am', 'humidity3pm', 'pressure9am', 'pressure3pm', 'cloud9am', 'temp9am', 'temp3pm', 'raintoday', 'raintomorrow', 'year', 'month', 'day', 'day_of_week', 'season']
+2026-06-04 19:49:17,154 - INFO - Loading file : weatherAUS.csv
+2026-06-04 19:49:17,840 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-06-04 19:49:17,905 - WARNING - High missing data: 10.3% of dataset is null
+2026-06-04 19:49:17,906 - INFO - Extract complete.
+2026-06-04 19:49:17,906 - INFO - starting the transformation....
+2026-06-04 19:49:18,002 - INFO - Dropped 3 columns: ['Evaporation', 'Sunshine', 'Cloud3pm']
+2026-06-04 19:49:18,098 - INFO - Filled numeric columns: 13 columns
+2026-06-04 19:49:18,162 - INFO - Filled text columns: 7 columns
+2026-06-04 19:49:18,225 - INFO - All missing values have been filled!
+2026-06-04 19:49:18,226 - INFO - transformation complete.
+2026-06-04 19:49:18,226 - INFO - Fixing the names and data types...
+2026-06-04 19:49:18,227 - INFO - Renamed columns: 20 to 20 columns
+2026-06-04 19:49:18,379 - INFO - Added derived date columns: year, month, day, day_of_week
+2026-06-04 19:49:18,381 - INFO - Created 'temp_range' feature using maxtemp and mintemp
+2026-06-04 19:49:18,382 - INFO - Created 'is_hot_day' feature (True when maxtemp > 35)
+2026-06-04 19:49:18,386 - INFO - Created 'season' column from month
+2026-06-04 19:49:18,435 - INFO - Schema fixed . Columns now: ['date', 'location', 'mintemp', 'maxtemp', 'rainfall', 'windgustdir', 'windgustspeed', 'winddir9am', 'winddir3pm', 'windspeed9am', 'windspeed3pm', 'humidity9am', 'humidity3pm', 'pressure9am', 'pressure3pm', 'cloud9am', 'temp9am', 'temp3pm', 'raintoday', 'raintomorrow', 'year', 'month', 'day', 'day_of_week', 'temp_range', 'is_hot_day', 'season']

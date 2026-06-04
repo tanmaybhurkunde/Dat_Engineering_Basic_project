@@ -1,5 +1,6 @@
 import pandas as pd
 import logging
+import os  
 
 # logging.basicConfig(
 #     filename = "pipeline1.log", 
@@ -124,8 +125,8 @@ def fix_schema(df) :
                 except:
                     continue
       # check if columns exist before  creating new features
-    possible_max_cols = ['max_temp' , 'maxTemp', 'max Temp' , 'temp_max' ]
-    possible_min_cols = ['min_temp', 'mintemp', 'min temp', 'temp_min']
+    possible_max_cols = ['maxtemp','max_temp' , 'maxTemp', 'max Temp' , 'temp_max' ]
+    possible_min_cols = ['mintemp','min_temp', 'mintemp', 'min temp', 'temp_min']
 
     max_col = None
     min_col = None
@@ -142,15 +143,25 @@ def fix_schema(df) :
 
     # create only if both temperature columns exist
     if max_col and min_col:
-        df['temp_range'] = df['max_temp'] - df['min_temp']
+        df['temp_range'] = df[max_col] - df[min_col]
         logger.info(f"Created 'temp_range' feature using {max_col} and {min_col}")
 
-        df['is_hot_day'] = df['max_temp'] > 35
+        df['is_hot_day'] = df[max_col] > 35
         logger.info(f"Created 'is_hot_day' feature (True when {max_col} > 35)")
     else:
         logger.warning(f"Could not find temperature columns. Found max: {max_col}, min: {min_col}")
 
-
+    if 'month' in df.columns:
+        season_map = {
+            12: 'Summer', 1: 'Summer', 2: 'Summer',
+            3: 'Autumn', 4: 'Autumn', 5: 'Autumn',
+            6: 'Winter', 7: 'Winter', 8: 'Winter',
+            9: 'Spring', 10: 'Spring', 11: 'Spring'
+        }
+        df['season'] = df['month'].map(season_map)
+        logger.info("Created 'season' column from month")
+    else:
+        logger.warning("'month' column not found - cannot create 'season' feature")
 
     # Task C — Fix numeric columns stored as strings (improved version)
     numeric_converted = []
@@ -184,11 +195,24 @@ def fix_schema(df) :
     logger.info(f"Schema fixed . Columns now: {list(df.columns)}")
     return df
 
+def save_parquet(df, output_path):
+    logger.info(f"Saving to Parquet: {output_path}")
+
+    # Task A: save to parquet
+
+    # Task B: read back and verify row count
+
+    # Task C: log file size comparison (need original CSV path too)
+
+    # Task D: confirm key column dtypes survived
+
+    logger.info("Parquet save complete.")
+
 if __name__ == "__main__":
     from extract import extract
     df_raw = extract("weatherAUS.csv")
     df_clean = clean(df_raw)
     df_final = fix_schema(df_clean)
-    print(df_final.dtypes)
+    print(df_final[['date', 'mintemp', 'maxtemp', 'temp_range', 'is_hot_day', 'season']].head(10))
     
     # print(df_clean.isnull().sum().sum())  # should show all zeros
