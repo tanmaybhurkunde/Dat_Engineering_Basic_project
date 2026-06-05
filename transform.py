@@ -195,18 +195,113 @@ def fix_schema(df) :
     logger.info(f"Schema fixed . Columns now: {list(df.columns)}")
     return df
 
-def save_parquet(df, output_path):
+def save_parquet(df, output_path ,csv_path=None):
     logger.info(f"Saving to Parquet: {output_path}")
 
     # Task A: save to parquet
+    try:
+        # Ensure directory exists
+        os.makedirs(os.path.dirname(output_path), exist_ok=True)
+        # Save to parquet (no index)
+        df.to_parquet(output_path, index=False, engine='pyarrow')
+        logger.info(f"Successfully saved DataFrame with {len(df)} rows to {output_path}")
+    except Exception as e:
+        logger.error(f"Failed to save parquet file: {e}")
+        raise
 
     # Task B: read back and verify row count
-
+    try:
+        df_verify = pd.read_parquet(output_path)
+        original_rows = len(df)
+        verified_rows = len(df_verify)
+        
+        if original_rows == verified_rows:
+            logger.info(f"Row count verification PASSED: {original_rows} rows saved and verified")
+        else:
+            logger.error(f"Row count verification FAILED: Original {original_rows}, Verified {verified_rows}")
+            raise ValueError("Row count mismatch after save/load")
+    except Exception as e:
+        logger.error(f"Failed to verify parquet file: {e}")
+        raise
     # Task C: log file size comparison (need original CSV path too)
+
+    if csv_path and os.path.exists(csv_path):
+        try:
+            # Get file sizes in bytes
+            csv_size = os.path.getsize(csv_path)
+            parquet_size = os.path.getsize(output_path)
+            
+            # Convert to MB for readability
+            csv_size_mb = csv_size / (1024 * 1024)
+            parquet_size_mb = parquet_size / (1024 * 1024)
+            
+            # Calculate compression ratio
+            compression_ratio = (1 - parquet_size / csv_size) * 100
+            
+            logger.info("=" * 50)
+            logger.info("FILE SIZE COMPARISON")
+            logger.info(f"CSV file size:     {csv_size_mb:.2f} MB")
+            logger.info(f"Parquet file size: {parquet_size_mb:.2f} MB")
+            logger.info(f"Space saved:       {compression_ratio:.1f}% ({csv_size_mb - parquet_size_mb:.2f} MB)")
+            logger.info("=" * 50)
+            
+        except Exception as e:
+            logger.warning(f"Could not compare file sizes: {e}")
+    else:
+        if csv_path:
+            logger.warning(f"CSV file not found for size comparison: {csv_path}")
+        else:
+            logger.info("No CSV path provided for size comparison")
 
     # Task D: confirm key column dtypes survived
 
+    try:
+        # Define expected dtypes for key columns (adjust based on your dataset)
+        key_columns = {
+            'date': 'datetime64[us]',  # or 'datetime64[ns]'
+            'location': 'str',  # or 'string'
+            'mintemp': 'float64',
+            'maxtemp': 'float64',
+            'rainfall': 'float64',
+            'temp_range': 'float64',  # engineered feature
+            'is_hot_day': 'bool',
+            'season': 'object'
+        }
+
+        # Check which key columns exist in the DataFrame
+        existing_keys = {col: dtype for col, dtype in key_columns.items() if col in df.columns}
+        
+        if existing_keys:
+            logger.info("Verifying datatype preservation for key columns:")
+            dtype_mismatches = []
+            
+            for col, expected_dtype in existing_keys.items():
+                actual_dtype = df_verify[col].dtype
+                
+                # Special handling for datetime types (they might be 'datetime64[ns]' vs 'datetime64[us]')
+                if 'datetime64' in str(expected_dtype) and 'datetime64' in str(actual_dtype):
+                    status = "✓"
+                    logger.debug(f"  {col}: {actual_dtype} (matches datetime type)")
+                elif str(actual_dtype) == expected_dtype or actual_dtype == expected_dtype:
+                    status = "✓"
+                    logger.debug(f"  {col}: {actual_dtype} (matches)")
+                else:
+                    status = "✗"
+                    dtype_mismatches.append((col, expected_dtype, actual_dtype))
+                    logger.warning(f"  {col}: Expected {expected_dtype}, got {actual_dtype}")
+
+            if dtype_mismatches:
+                logger.warning(f"Found {len(dtype_mismatches)} datatype mismatches")
+            else:
+                logger.info("All key column datatypes preserved successfully!")
+        else:
+            logger.info("No key columns found for dtype verification")
+            
+    except Exception as e:
+        logger.warning(f"Could not verify datatypes: {e}")
+
     logger.info("Parquet save complete.")
+    return output_path
 
 if __name__ == "__main__":
     from extract import extract
@@ -214,5 +309,14 @@ if __name__ == "__main__":
     df_clean = clean(df_raw)
     df_final = fix_schema(df_clean)
     print(df_final[['date', 'mintemp', 'maxtemp', 'temp_range', 'is_hot_day', 'season']].head(10))
+
+
+     # Save to Parquet
+    save_parquet(
+        df_final, 
+        output_path="data/weather_cleaned.parquet",
+        csv_path="weatherAUS.csv"  # Original CSV for size comparison
+    )
+    
     
     # print(df_clean.isnull().sum().sum())  # should show all zeros
