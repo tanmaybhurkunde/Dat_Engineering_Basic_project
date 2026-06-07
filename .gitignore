@@ -7,3 +7,4 @@ __pycache__/
 *.pyc
 data/processed/gcp-key.json
 gcp-key.json
+*.json
