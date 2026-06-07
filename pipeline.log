@@ -270,3 +270,44 @@
 2026-06-05 12:19:02,129 - WARNING -   season: Expected object, got str
 2026-06-05 12:19:02,130 - WARNING - Found 1 datatype mismatches
 2026-06-05 12:19:02,130 - INFO - Parquet save complete.
+2026-06-07 00:49:03,514 - INFO - Loading file : weatherAUS.csv
+2026-06-07 00:49:04,264 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-06-07 00:49:04,308 - WARNING - High missing data: 10.3% of dataset is null
+2026-06-07 00:49:04,309 - INFO - Extract complete.
+2026-06-07 00:49:04,309 - INFO - starting the transformation....
+2026-06-07 00:49:04,350 - INFO - Dropped 3 columns: ['Evaporation', 'Sunshine', 'Cloud3pm']
+2026-06-07 00:49:04,443 - INFO - Filled numeric columns: 13 columns
+2026-06-07 00:49:04,503 - INFO - Filled text columns: 7 columns
+2026-06-07 00:49:04,513 - INFO - All missing values have been filled!
+2026-06-07 00:49:04,514 - INFO - transformation complete.
+2026-06-07 00:49:04,515 - INFO - Fixing the names and data types...
+2026-06-07 00:49:04,549 - INFO - Renamed columns: 20 to 20 columns
+2026-06-07 00:49:04,809 - INFO - Added derived date columns: year, month, day, day_of_week
+2026-06-07 00:49:04,811 - INFO - Created 'temp_range' feature using maxtemp and mintemp
+2026-06-07 00:49:04,812 - INFO - Created 'is_hot_day' feature (True when maxtemp > 35)
+2026-06-07 00:49:04,826 - INFO - Created 'season' column from month
+2026-06-07 00:49:04,863 - INFO - Schema fixed . Columns now: ['date', 'location', 'mintemp', 'maxtemp', 'rainfall', 'windgustdir', 'windgustspeed', 'winddir9am', 'winddir3pm', 'windspeed9am', 'windspeed3pm', 'humidity9am', 'humidity3pm', 'pressure9am', 'pressure3pm', 'cloud9am', 'temp9am', 'temp3pm', 'raintoday', 'raintomorrow', 'year', 'month', 'day', 'day_of_week', 'temp_range', 'is_hot_day', 'season']
+2026-06-07 00:49:04,902 - INFO - Saving to Parquet: data/weather_cleaned.parquet
+2026-06-07 00:49:05,741 - INFO - Successfully saved DataFrame with 145460 rows to data/weather_cleaned.parquet
+2026-06-07 00:49:06,575 - INFO - Row count verification PASSED: 145460 rows saved and verified
+2026-06-07 00:49:06,575 - INFO - ==================================================
+2026-06-07 00:49:06,576 - INFO - FILE SIZE COMPARISON
+2026-06-07 00:49:06,576 - INFO - CSV file size:     13.44 MB
+2026-06-07 00:49:06,576 - INFO - Parquet file size: 2.35 MB
+2026-06-07 00:49:06,576 - INFO - Space saved:       82.5% (11.09 MB)
+2026-06-07 00:49:06,577 - INFO - ==================================================
+2026-06-07 00:49:06,577 - INFO - Verifying datatype preservation for key columns:
+2026-06-07 00:49:06,578 - DEBUG -   date: datetime64[us] (matches datetime type)
+2026-06-07 00:49:06,578 - DEBUG -   location: str (matches)
+2026-06-07 00:49:06,579 - DEBUG -   mintemp: float64 (matches)
+2026-06-07 00:49:06,580 - DEBUG -   maxtemp: float64 (matches)
+2026-06-07 00:49:06,580 - DEBUG -   rainfall: float64 (matches)
+2026-06-07 00:49:06,582 - DEBUG -   temp_range: float64 (matches)
+2026-06-07 00:49:06,583 - DEBUG -   is_hot_day: bool (matches)
+2026-06-07 00:49:06,583 - WARNING -   season: Expected object, got str
+2026-06-07 00:49:06,585 - WARNING - Found 1 datatype mismatches
+2026-06-07 00:49:06,585 - INFO - Parquet save complete.
+2026-06-07 00:51:04,356 - INFO - Loading file : weatherAUS.csv
+2026-06-07 00:51:05,010 - INFO - Successfully loaded 145460 rows and 23 columns
+2026-06-07 00:51:05,029 - WARNING - High missing data: 10.3% of dataset is null
+2026-06-07 00:51:05,030 - INFO - Extract complete.
