@@ -5,4 +5,5 @@ __pycache__/
 *.parquet
 .env
 *.pyc
-data/processed/
+data/processed/gcp-key.json
+gcp-key.json
